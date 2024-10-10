@@ -1,0 +1,9 @@
+services:
+  luker_rest:
+    image: docker-image
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: luker-rest
+    ports:
+      - "4000:5000"

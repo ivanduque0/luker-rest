@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+
+  luker_rest:
+
+    build:
+      context: ./
+      dockerfile: ./dockerfile.local
+    container_name: luker-rest
+
+    volumes:
+      - ./:/app
+
+    command: sh -c "pip --no-cache-dir install -r requirements.local.txt --break-system-packages && python3 venv/test.py"
+    
+    ports:
+      - "4000:5000"

@@ -1,0 +1,8 @@
+FROM alpine:latest
+
+RUN apk update
+RUN apk add py-pip
+RUN apk add --no-cache python3 
+RUN pip install --upgrade pip --break-system-packages
+
+WORKDIR /app
